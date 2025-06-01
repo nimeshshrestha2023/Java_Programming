@@ -41,5 +41,20 @@ class Learn{
     }
 }
 
-// 4. 
+// 4. Program to take two integers and find the sum between them.
+
+Code:
+import java.util.Scanner;
+
+class Learn{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        int num1, num2;
+        System.out.println("Enter two numbers: ");
+        num1 = sc.nextInt();
+        num2 = sc.nextInt();
+        System.out.println("Sum between "+num1 + " and " +num2 + " is " +(num1+num2));
+    }
+}
 
