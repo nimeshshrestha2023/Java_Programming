@@ -23,4 +23,23 @@ class Learn{
 // 3. Program in Java to name , roll, and age from the user and display accordingly.
 
 Code:
+import java.util.Scanner;
+
+class Learn{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter name: ");
+        String name = sc.nextLine();
+        System.out.println("Enter the age: ");
+        int age = sc.nextInt();
+        System.out.println("Enter the roll: ");
+        int roll = sc.nextInt();
+        
+        System.out.println("---Displaying the output---");
+        System.out.println("Name: " +name + " |Age: " +age + "|Roll: " +roll);
+    }
+}
+
+// 4. 
 
