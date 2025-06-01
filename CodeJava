@@ -11,4 +11,16 @@ class Learn {
 // 2. Program in Java to display the sum of two integers.
 
 Code:
+class Learn{
+    public static void main(String[] args){
+        int num1 = 5;
+        int num2 = 4;
+        
+        System.out.println("Sum between " + num1 + "and" + num2 + "is" + (num1+num2));
+    } 
+}
+
+// 3. Program in Java to name , roll, and age from the user and display accordingly.
+
+Code:
 
