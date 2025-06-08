@@ -58,3 +58,37 @@ class Learn{
     }
 }
 
+// Program in Java to take 'n' integers and store it in an array and display too.
+
+Code:
+
+import java.util.Scanner;
+
+class Learn{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int i,limit;
+        System.out.println("How many numbers?");
+        limit = sc.nextInt();
+
+        System.out.println("Enter "+limit+" numbers: ");
+        int[] num = new int[limit];
+        for(i=0;i<limit;i++)
+        {
+            System.out.println("Number: "+(i+1));
+            num[i] = sc.nextInt();
+        }
+        int max = num[0];
+        for(i=1;i<limit;i++)
+        {
+            if(num[i] > max)
+            {
+                max = num[i];
+            }
+        }
+        System.out.println("The largest number is: "+max);
+        System.out.println("Second largest number is "+num[limit-2]);        
+
+    }
+}
+
