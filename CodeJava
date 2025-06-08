@@ -91,4 +91,87 @@ class Learn{
 
     }
 }
+// Program in java to develop the menu-based program using switch case :
+   1.Convert the binary to decimal
+   2.Convert the decimal to binary
+   3.Armstrong number or not
+
+Code:
+
+import java.util.Scanner;
+
+class Sample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("---1. Convert the binary to decimal---");
+        System.out.println("---2. Convert the decimal to binary---");
+        System.out.println("---3. Armstrong number---");
+        System.out.println("---Your choice(1-3): ");
+        int choice = sc.nextInt();
+
+        switch (choice) {
+
+            case 1: {
+                int r, c, s = 0, p = 0;
+                System.out.println("Enter the binary number:");
+                int num = sc.nextInt();
+                c = num;
+                while (num > 0) {
+                    r = num % 10;
+                    s = s + r * (int) Math.pow(2, p);
+                    num = num / 10;
+                    p++;
+                }
+                System.out.println("Decimal number is: " + s);
+                break;
+            }
+
+            case 2: {
+                System.out.println("Enter the decimal value: ");
+                int num = sc.nextInt();
+                int r, c;
+                String s = "";
+                c = num;
+                while (num > 0) {
+                    r = num % 2;
+                    num = num / 2;
+                    s = r + s;
+
+                }
+                System.out.println("Decimal is " + s);
+                break;
+            }
+
+            case 3: {
+                System.out.println("Enter the number: ");
+                int num = sc.nextInt();
+                int c = num;
+                int temp = num;
+                int cout = 0, r;
+                int s = 0;
+                while (temp > 0) {
+                    temp = temp / 10;
+                    cout++;
+                }
+                temp = num;
+                while (temp > 0) {
+                    r = temp % 10;
+                    s = s + (int) Math.pow(r, cout);
+                    temp = temp / 10;
+                }
+                if (c == s) {
+                    System.out.println(c+" is armstrong");
+                } else {
+                    System.out.println(c+" is not armstrong");
+                }
+                break;
+            }
+            default:
+                System.out.println("Invalid choice");
+
+        }
+
+    }
+}
+
 
