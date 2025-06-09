@@ -174,4 +174,40 @@ class Sample {
     }
 }
 
+// Program in Java to sort the integers in an array .
+import java.util.Scanner;
+
+class Learn{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How many number?");
+        int limit = sc.nextInt();
+        int[] num = new int[limit];
+        System.out.println("Enter "+limit+" numbers: ");
+        for(int i=0;i<num.length;i++)
+        {
+            System.out.println("Number: "+(i+1));
+            num[i] = sc.nextInt();
+
+        }
+        for(int i=0;i<num.length;i++)
+        {
+            for(int j=i+1;j<num.length;j++)
+            {
+                if(num[i] > num[j])
+                {
+                    int temp = num[i];
+                    num[i] = num[j];
+                    num[j] = temp;
+                }
+            }
+        }
+        System.out.println("---Sorted Array---");
+        for(int i=0;i<num.length;i++)
+        {
+            System.out.print(num[i]+" ");
+        }
+    }
+}
+
 
