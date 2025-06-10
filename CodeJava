@@ -210,4 +210,54 @@ class Learn{
     }
 }
 
+// Program in Java that takes matrix elements of n size array and find the sum of each diagonals.
+
+Code:
+import java.util.Scanner;
+
+class Learn{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Size of matrix?");
+        int size = sc.nextInt();
+        System.out.println("Enter matrix elements: ");
+        int[][] num = new int[size][size];
+        for(int i=0;i<size;i++)
+        {
+            for(int j=0;j<size;j++)
+            {
+                num[i][j] = sc.nextInt();
+            }
+        }
+        System.out.println("---Matrix formed---");
+        for(int i=0;i<size;i++)
+        {
+            for(int j=0;j<size;j++)
+            {
+                System.out.print(num[i][j] +"\t");
+            }
+            System.out.println();
+        }
+        int leftSum = 0, rightSum = 0;
+        for(int i=0;i<size;i++)
+        {
+            for(int j=0;j<size;j++)
+            {
+                if(i==j)
+                {
+                    leftSum += num[i][j];
+
+                }
+                if(i+j == size - 1)
+                {
+                    rightSum += num[i][j];
+                }
+            }
+        }
+        System.out.println("Sum of left diagonal elements: " + leftSum);
+        System.out.println("Sum of right diagonal elements: " + rightSum);
+
+    }
+}
+
 
