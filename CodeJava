@@ -281,4 +281,44 @@ class Learn{
     }
 }
 
+// Program in Java that takes 2D Array of characters and store 'n' characters.
+
+Code:
+import java.util.Scanner;
+
+public class Char2DArray {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Getting dimensions of the 2D array
+        System.out.print("Enter number of rows: ");
+        int rows = scanner.nextInt();
+        System.out.print("Enter number of columns: ");
+        int cols = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+
+        char[][] charArray = new char[rows][cols];
+
+        // Filling the array with characters
+        System.out.println("Enter " + (rows * cols) + " characters:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                charArray[i][j] = scanner.next().charAt(0);
+            }
+        }
+
+        // Displaying the stored characters
+        System.out.println("Stored 2D character array:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(charArray[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
+
+
 
