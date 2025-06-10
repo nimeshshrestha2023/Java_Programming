@@ -260,4 +260,25 @@ class Learn{
     }
 }
 
+// Program in Java to take string value and print only the special characters (not alphabets).
+import java.util.Scanner;
+
+class Learn{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the string: ");
+        String s = sc.nextLine();
+        for(int i=0;i<s.length();i++)
+        {
+            char ch = s.charAt(i);
+
+            if(!((ch>='A' && ch<='Z') || (ch>='a' && ch<='z')))
+            {
+                System.out.println(ch);
+            }
+
+        }
+    }
+}
+
 
