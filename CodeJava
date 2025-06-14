@@ -320,5 +320,45 @@ public class Char2DArray {
     }
 }
 
+// Program  in Java to display armstrong numbers from m to n.
+
+Code:
+import java.util.Scanner;
+
+class ArmstrongRange {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the lower limit (m): ");
+        int m = sc.nextInt();
+        System.out.println("Enter the upper limit (n): ");
+        int n = sc.nextInt();
+
+        System.out.println("Armstrong numbers between " + m + " and " + n + ":");
+        
+        for (int num = m; num <= n; num++) {
+            int temp = num, sum = 0, count = 0;
+
+            // Count the number of digits
+            int c=num;
+            while (temp > 0) {
+                temp /= 10;
+                count++;
+            }
+
+            temp = num; // Reset temp for the calculation
+            while (temp > 0) {
+                int r = temp % 10;
+                sum += Math.pow(r, count);
+                temp /= 10;
+            }
+
+            if (sum == num) {
+                System.out.println(num);
+            }
+        }
+    }
+}
+
+
 
 
