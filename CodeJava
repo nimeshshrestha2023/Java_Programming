@@ -359,6 +359,34 @@ class ArmstrongRange {
     }
 }
 
+/* Create a class TwoDpoint with x and y variables to represent two dimensional coordinate point. Create two instances of TwoDpoint class. Then, find the distance between these two instances. Also get the mid - point as a TwoDpoint type. */
+import java.util.Scanner;
+
+class TwoDpoint{
+    double x ,y;
+}
+
+class Run{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        TwoDpoint p1 = new TwoDpoint();
+        TwoDpoint p2 = new TwoDpoint();
+        System.out.println("Enter the x & y for p1: ");
+        p1.x = sc.nextDouble();
+        p1.y = sc.nextDouble();
+        System.out.println("Enter the x & y for p2: ");
+        p2.x = sc.nextDouble();
+        p2.y = sc.nextDouble();
+        double distance = Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y,2));
+        System.out.println("The distance between p1 & p2 is: "+distance);
+        TwoDpoint midpoint = new TwoDpoint();
+        midpoint.x = (p1.x + p2.x)/2;
+        midpoint.y = (p1.y + p2.y)/2;
+        System.out.println("Midpoint is("+midpoint.x+","+midpoint.y+")");   
+        
+    }
+}
+
 
 
 
