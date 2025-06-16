@@ -387,6 +387,43 @@ class Run{
     }
 }
 
+/* Create a class member with these integers instances variables x ,y , & z. The class has getMax()method that will return
+the largest number. Create a class NumberDemo with main method that will create an object of Number & will print the largest number. */
+
+Code:
+import java.util.Scanner;
+
+class Number {
+    int x , y,z;
+    int getMax(){
+        int max = x;
+        if(y > max)
+        {
+            max = y;
+        }
+        if(z > max)
+        {
+            max = z;
+        }
+        return max;
+    }
+
+}
+class NumberDemo{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Number n = new Number();
+        System.out.println("Enter the first number");
+        n.x = sc.nextInt();
+        System.out.println("Enter the second number");
+        n.y = sc.nextInt();
+        System.out.println("Enter the third number");
+        n.z = sc.nextInt();
+        System.out.println("The maximum number is " + n.getMax());
+        
+    }
+}
+
 
 
 
