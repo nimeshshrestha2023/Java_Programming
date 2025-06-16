@@ -424,6 +424,76 @@ class NumberDemo{
     }
 }
 
+/*Student Grade Evaluator Write a Student class with attributes name, rollNo, and marks (an array of 5 subjects).
+Add a method to calculate the average and determine the grade based on the average. */
+
+Code:
+
+
+import java.util.Scanner;
+
+class Student {
+    String name;
+    int rollNo;
+    int[] marks = new int[5];
+    String grade;
+
+    double calculate() {
+        int sum = 0;
+        for (int i=0;i<marks.length;i++) {
+            sum += marks[i];
+        }
+        return (double) sum / marks.length;
+    }
+
+    void assignGrade(double avg) {
+        if (avg >= 90) {
+            grade = "A";
+        } else if (avg >= 80) {
+            grade = "B";
+        } else if (avg >= 70) {
+            grade = "C";
+        } else if (avg >= 60) {
+            grade = "D";
+        } else {
+            grade = "F";
+        }
+    }
+
+    void displayInfo() {
+        System.out.println("\nStudent Details:");
+        System.out.println("Name: " + name);
+        System.out.println("Roll No: " + rollNo);
+        System.out.println("Average Marks: " + calculate());
+        System.out.println("Grade: " + grade);
+    }
+}
+
+public class Run {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Student s = new Student();
+
+        System.out.print("Enter the name of the student: ");
+        s.name = sc.nextLine();
+
+        System.out.print("Enter the roll number: ");
+        s.rollNo = sc.nextInt();
+
+        System.out.println("Enter the marks of 5 subjects:");
+        for (int i = 0; i < s.marks.length; i++) {
+            System.out.print("Subject " + (i + 1) + ": ");
+            s.marks[i] = sc.nextInt();
+        }
+
+        double avg = s.calculate();
+        s.assignGrade(avg);
+        s.displayInfo();
+    }
+}
+
+
+
 
 
 
