@@ -544,6 +544,43 @@ class Run{
     }
 }
 
+/* Create a class currency with member variables rupees and paisa(both integers). Create two instances of currency ,  Add two currency object in such a way that when paisa is greater then 99 the rs should be incremented by 1 and paisa should be decremented by 100. The result of addition should be stored in another currency object. */
+
+class Currency {
+    int rupees;
+    int paisa;
+
+    Currency(int r, int p) {
+        rupees = r;
+        paisa = p;
+
+        if (paisa >= 100) {
+            rupees += paisa / 100;
+            paisa = paisa % 100;
+        }
+    }
+
+    void display() {
+        System.out.println(rupees + " Rupees and " + paisa + " Paisa");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Currency c1 = new Currency(10, 80);
+        Currency c2 = new Currency(5, 50);
+
+        int totalRupees = c1.rupees + c2.rupees;
+        int totalPaisa = c1.paisa + c2.paisa;
+
+        Currency result = new Currency(totalRupees, totalPaisa);
+
+        System.out.print("Sum = ");
+        result.display();
+    }
+}
+
+
 
 
 
