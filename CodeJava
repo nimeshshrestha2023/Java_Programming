@@ -544,7 +544,9 @@ class Run{
     }
 }
 
-/* Create a class currency with member variables rupees and paisa(both integers). Create two instances of currency ,  Add two currency object in such a way that when paisa is greater then 99 the rs should be incremented by 1 and paisa should be decremented by 100. The result of addition should be stored in another currency object. */
+/* Create a class currency with member variables rupees and paisa(both integers). Create two instances of currency ,  
+Add two currency object in such a way that when paisa is greater then 99 the rs should be incremented by 1 and paisa should be decremented by 100.
+The result of addition should be stored in another currency object. */
 
 class Currency {
     int rupees;
