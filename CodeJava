@@ -676,7 +676,7 @@ class Demo{
     }
 }
 
-// Program in Java to find the factorial of the number.
+// Program in Java to find the factorial of the number using recursive number.
 
 Code:
 class Main{
@@ -688,6 +688,39 @@ class Main{
     }
     public static void main(String[] args){
         System.out.println("The factorial is "+fact(4));
+    }
+}
+
+// Program in Java to find the sum of n natural numbers using recursive method.
+
+Code:
+
+import java.util.Scanner;
+
+class Main{
+    public static int fact(int num)
+    {
+        if(num<=1)
+        return 1;
+        else
+        return num+fact(num-1);
+    }
+    public static int  getVal()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number: ");
+       int  n = sc.nextInt();
+        return n;
+    }
+    public  static void display(int n)
+    {
+         System.out.println("Sum of "+n+ " number is "+fact(n));
+    }
+    public static void main(String[] args){
+        
+       int n = getVal();
+       display(n);
+     
     }
 }
 
