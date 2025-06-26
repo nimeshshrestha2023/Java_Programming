@@ -725,6 +725,36 @@ class Main{
 }
 
 
+// Program in Java to find the power of the given number using recursion.
+
+Code:
+
+import java.util.Scanner;
+
+class Main{
+    public static int power(int base, int expo)
+    {
+        if(expo == 0)
+        return 1;
+        else
+        return base*power(base,expo-1);
+    }
+      public static void getVal()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter base and exponent: ");
+        int base = sc.nextInt();
+        int expo = sc.nextInt();
+        int result = power(base,expo);
+        System.out.println(base+" raised to the power "+expo+" expo is "+result);
+        
+    }
+    public static void main(String[] args){
+        getVal();
+        
+    }
+}
+
 
 
 
