@@ -755,6 +755,31 @@ class Main{
     }
 }
 
+// Example of Garbage collector
+
+class Gcollector{
+    Gcollector(){
+        System.out.println("New object created !");
+    }
+    protected void finalize(){
+        System.out.println("Objject is destroyed!");
+    }
+    
+}
+class Main{
+    public static void main(String[] args) {
+        Gcollector obj = new Gcollector();
+        obj = null; // By null reference
+        Gcollector obj2 = new Gcollector();
+        Gcollector obj3 = new Gcollector();
+        obj2 = obj3; // By assigning refernce to another
+
+        new Gcollector(); // By anonymous creation
+        System.gc();
+
+    }
+}
+
 
 
 
