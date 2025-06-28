@@ -492,6 +492,61 @@ public class Run {
     }
 }
 
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Program to input name , roll and marks in three sunjects and store it in obj;
+
+import java.util.Scanner;
+
+class Student{
+    static String name;
+    static int roll;
+    static int[] marks = new int[3];
+    static String grade;
+
+    int getSum(){
+        int sum = 0;
+        for(int i=0;i<marks.length;i++)
+        {
+
+            sum += marks[i];
+        }
+        return sum;
+    }
+    String getGrade(){
+        int sum = getSum();
+        if(sum >=90) grade = "A";
+        else if(sum >= 80) grade = "B";
+        else if(sum >= 70) grade = "C";
+        else grade = "F";
+        return grade;
+    }
+
+        void display(){
+            System.out.println("Name: "+name);
+            System.out.println("ROll: "+roll);
+            System.out.println("Total marks: "+getSum());
+            System.out.println("Grade: "+getGrade());
+        }
+}
+class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Student s = new Student();
+        System.out.println("Enter name: ");
+        Student.name = sc.nextLine();
+        System.out.println("Enter roll: ");
+        s.roll = sc.nextInt();
+        System.out.println("Marks in 3 subject: ");
+        for(int i=0;i<Student.marks.length;i++)
+        {
+            s.marks[i] =sc.nextInt();
+        }
+        s.display();
+
+    }
+}
+
 /*Odd/Even Counter Create a class that takes an array of integers as input and has methods to count how many are even and how many are odd. */
 
 import java.util.Scanner;
