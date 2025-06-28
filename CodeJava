@@ -688,6 +688,64 @@ class Books{
     }
 }
 
+// Create a class Rectangle with member variables length and breadth (both double type). Create three instances of retangle and print
+area and perimeter of that rectangle instances whose length is greatest. Create member method as required.
+
+Code: 
+import java.util.Scanner;
+
+class Rectangle{
+    double length, breadth;
+    Rectangle(double l, double b)
+    {
+        length = l;
+        breadth = b;
+    }
+    double area(){
+        return length * breadth;
+
+    }
+    double peri(){
+        return 2*(length + breadth);
+    }
+
+}
+class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter length and breadth for obj 1: ");
+        double l1 = sc.nextDouble();
+        double b1 = sc.nextDouble();
+        Rectangle r1 = new Rectangle(l1, b1);
+
+        System.out.println("Enter length and breadth for obj2: ");
+        double l2 = sc.nextDouble();
+        double b2 = sc.nextDouble();
+        Rectangle r2 = new Rectangle(l2, b2);
+
+        System.out.println("Enter length and breadth for obj3: ");
+        double l3 = sc.nextDouble();
+        double b3 = sc.nextDouble();
+        Rectangle r3 = new Rectangle(l3, b3);
+
+        Rectangle max = r1;
+        if(r2.length > max.length)
+        {
+            max = r2;
+        }
+        if(r3.length > max.length)
+        {
+        max = r3;
+        }
+        System.out.println("Area: "+max.area());
+        System.out.println("Perimeter: "+max.peri());
+        
+
+
+    }
+}
+
+
 // Program in Java to find the factorial of a number using recursive.
 
 import java.util.Scanner;
