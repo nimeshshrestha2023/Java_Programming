@@ -914,6 +914,112 @@ class Main{
 }
 
 
+// Switch case:
+Code:
+
+import java.util.Scanner;
+
+class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("1. Check palindrome");
+        System.out.println("2. Check armstrong: ");
+        System.out.println("Binary to decimal");
+        System.out.println("Decimal to binary: ");
+        int choice = sc.nextInt();
+
+        switch(choice)
+        {
+            case 1:{
+            System.out.println("Enter the number: ");
+            int num = sc.nextInt();
+            int r, c , s=0;
+            c = num;
+            while(num > 0)
+            {
+                r = num % 10;
+                s = s*10 + r;
+                num/=10;
+            }
+            if(c==s)
+            {
+                System.out.println("Palindrome");
+            }
+            else
+            {
+                System.out.println("Not palindrome");
+            }
+            break;
+        }
+
+            case 2:{
+            System.out.println("Enter the number: ");
+            int num = sc.nextInt();
+            int c = num;
+            int temp = num;
+            int r, s=0, count = 0;
+            while(temp> 0)
+            {
+                r = num % 10;
+                count++;
+            }
+            temp = num;
+            while(temp > 0)
+            {
+                r = temp % 10;
+                s = s + (int)Math.pow(r, count);
+                temp /= 10;
+            }
+            if(c==s)
+            {
+                System.out.println("Armstrong");
+            }
+            else
+            System.out.println("Not");
+            break;
+            }
+
+            case 3:{
+                System.out.println("Enter the binary: ");
+                int num = sc.nextInt();
+                int r, c ,s=0, p = 0;
+                c = num;
+                while(num > 0)
+                {
+                     r = num % 10;
+                     s = s+r*(int)Math.pow(2,p);
+                     num = num/10;
+                     p++;
+                }
+                System.out.println("Decimal is "+s);
+                break;
+            }
+
+            case 4:{
+                System.out.println("Enter the decimal : ");
+                int num = sc.nextInt();
+                int r , c;
+                String s = "";
+                c=  num;
+                while(num > 0)
+                {
+                    r = num % 2;
+                    num /= 2;
+                    s += r;
+                }
+                System.out.println("Binary is "+s);
+                break;
+
+            }
+            default: {
+            System.out.println("Invalid choice");
+            }
+
+        }
+    }
+}
+
+
 
 
 
