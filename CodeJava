@@ -744,7 +744,27 @@ class Main{
 
     }
 }
+// Program in java to print the number from 1 to n using recursion.
 
+Code:
+
+import java.util.Scanner;
+
+class Main{
+    public static void print(int count)
+    {
+        if(count == 0) return;
+        print(count - 1);
+        System.out.println(count);
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the limit: ");
+        int limit = sc.nextInt();
+        
+        print(limit);
+    }
+}
 
 // Program in Java to find the factorial of a number using recursive.
 
