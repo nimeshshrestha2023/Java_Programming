@@ -1048,6 +1048,27 @@ class Demo{
     }
 }
 
+// Examples of Super keyword:
+
+Code:
+class Worker{
+    int wages = 10000;
+}
+class Picker extends Worker{
+    int wages = 5000;
+    int bonus = 1000;
+
+    void displayDetail(){
+        System.out.println("Picker wages is "+wages);
+        System.out.println("Worker wages is "+super.wages);
+        System.out.println("Picker's bonus is "+bonus);
+    }
+    public static void main(String[] args) {
+        Picker p = new Picker();
+        p.displayDetail();
+    }
+}
+
 
 
 
