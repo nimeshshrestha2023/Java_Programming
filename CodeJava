@@ -1019,6 +1019,35 @@ class Main{
     }
 }
 
+// Program to demonstrate the paramaterized and non parameterized constructor
+
+code:
+class Demo{
+    int value;
+    String name;
+
+    //Non paramaterized constructor 
+    Demo()
+    {
+        this.value = 0;
+        this.name = "No name";
+        System.out.println("Non paramaterized constructor called !!");
+    }
+    //Paramaterized constructor
+    Demo(int value, String name)
+    {
+        this.value =value;
+        this.name = name;
+        System.out.println("Paramaterized constructor called!");
+    }
+    public static void main(String[] args) {
+        Demo d1 = new Demo();
+        System.out.println("For non-paramaterized constructor, value is "+d1.value + " and name for it is "+d1.name);
+        Demo d2 = new Demo(1,"Nimesh");
+        System.out.println("For paramaterized constuctor , value is "+d2.value+"and name is "+d2.name);
+    }
+}
+
 
 
 
