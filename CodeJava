@@ -1069,6 +1069,34 @@ class Picker extends Worker{
     }
 }
 
+// Order of inheritance
+
+class A{
+    A()
+    {
+        System.out.println("Grand Parents");
+    }
+}
+class B extends A{
+    B()
+    {
+        System.out.println("Parent class");
+    }
+}
+
+class C extends B{
+    C()
+    {
+        System.out.println("Child class");
+    }
+}
+class Demo{
+    public static void main(String[] args) {
+        C obj = new C();
+        
+    }
+}
+
 
 
 
