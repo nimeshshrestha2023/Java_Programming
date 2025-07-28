@@ -6,7 +6,7 @@ class Learn {
     public static void main(String[] args) {
         System.out.println("Hello, World !");
     }
-}
+} 
 
 // 2. Program in Java to display the sum of two integers.
 
