@@ -1098,6 +1098,24 @@ class Demo{
 }
 
 
+// Reverse the string using StringBuilder() or StringBuffer()
+
+Code:
+
+class Main{
+    public static void main(String[] args)
+    {
+        //Using StringBuilder
+        StringBuilder str = new StringBuilder("Nimesh");
+        System.out.println(str.reverse());
+        
+        //Using StringBuffer
+        StringBuffer str1= new StringBuffer("Shrestha");
+        System.out.println(str1.reverse());
+    }
+}
+
+
 
 
 
