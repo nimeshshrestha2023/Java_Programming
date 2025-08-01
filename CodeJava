@@ -1302,5 +1302,25 @@ class Main{
 }
 
 
+// Math class in java
+
+Code:
+class Main{
+    public static void main(String[] args) {
+        System.out.println(Math.pow(2,3));
+        System.out.println(Math.sqrt(81));
+        System.out.println(Math.cbrt(27));
+        System.out.println(Math.max(23, 22));
+        System.out.println(Math.min(23, 26));
+        System.out.println(Math.abs(-5));
+        System.out.println(Math.floor(2.4));
+        System.out.println(Math.ceil(2.4));
+        System.out.println(Math.sin(3.1415/2));
+        System.out.println(Math.sin(Math.toRadians(90)));
+        System.out.println(Math.random()*9);
+    }
+}
+
+
 
 
