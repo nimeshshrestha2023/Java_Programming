@@ -1267,6 +1267,25 @@ class Main{
 }
 
 
+// Sample of throw keyword:
+
+Code:
+
+class Main{
+    public static void main(String[]args)
+    {
+        int age = 13;
+        if(age<18)
+        {
+            throw new ArithmeticException("Denied");
+        }
+        else{
+            System.out.println("Granted");
+        }
+        System.out.println("Yoo !, I won't executed if thrown");
+    }
+}
+
 
 
 
