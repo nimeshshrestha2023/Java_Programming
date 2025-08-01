@@ -1339,6 +1339,46 @@ class Main {
     }
 }
 
+// Working with BigNumber and BigDecimal values:
+
+Code:
+
+import java.math.BigInteger;
+import java.math.BigDecimal;
+
+class Main{
+    public static void main(String[] args)
+    {
+        BigInteger num1 = new BigInteger("123232334335345454465656565343434343332323232");
+        BigInteger num2=  new BigInteger("232322434345454544544545454545454545455454545");
+        BigDecimal d1 = new BigDecimal("12323232323323232323232323232323.344545545455");
+        BigDecimal d2 = new BigDecimal("1223232323232434556565343434343.54545454545455");
+        
+        
+        
+        BigInteger sum = num1.add(num2);
+        BigInteger sub  = num1.subtract(num2);
+        BigInteger mul = num1.multiply(num2);
+        BigInteger div = num1.divide(num2);
+        BigInteger power = num1.pow(2);
+        System.out.println(sum);
+        System.out.println(sub);
+        System.out.println(mul);
+        System.out.println(div);
+        System.out.println(power);
+        
+        BigDecimal dsum = d1.add(d2);
+        System.out.println(dsum);
+        
+        /*
+        ..
+        .....
+        ....
+        
+        */
+    }
+}
+
 
 
 
