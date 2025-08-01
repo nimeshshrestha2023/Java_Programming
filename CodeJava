@@ -1162,6 +1162,34 @@ class Main{
     }
 }
 
+// Java Custom exception sample:
+
+Code:
+
+class InvalidAgeException extends Exception{
+    InvalidAgeException(String msg)
+    {
+        super(msg);
+    }
+}
+class Main{
+    public static void main(String[] args) {
+        try{
+            vote(12);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Exception caught: "+e.getMessage());
+        }
+    }
+    public static void vote(int age) throws InvalidAgeException{
+        if(age<18)
+        throw new InvalidAgeException("Access denied");
+        else
+        System.out.println("Access granted");
+    }
+
+}
 
 
 
