@@ -1245,6 +1245,27 @@ class Main{
 }
 
 
+// Sample of finally keyword
+
+Code:
+
+class Main{
+    public static void main(String[] args)
+    {
+        try{
+            int x = 22/2;
+            System.out.println(x);
+        }
+        catch(NullPointerException e)
+        {
+            System.out.println(e);
+        }
+        finally{
+            System.out.println("I am always executed !");
+        }
+    }
+}
+
 
 
 
