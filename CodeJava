@@ -1379,6 +1379,52 @@ class Main{
     }
 }
 
+//Write a program to create a class Mobile (type, Phone_no). Customize the exception such that if the user give phone_no having 
+less than or greater than 10 digit, then the program has to throw an exception with the message “Invalid Phone number”. [BIM – 2023 TU]
+
+Code:
+class InvalidPhoneNumberException extends Exception{
+    InvalidPhoneNumberException(String msg)
+    {
+        super(msg);
+    }
+}
+class Main{
+    public static void main(String[] args)
+    {
+        try{
+            Mobile m = new Mobile("Smartphone","9812345678");
+            m.show();
+        }catch(Exception e)
+        {
+            System.out.println("Exception caught: "+e.getMessage());
+        }
+    }
+    
+}
+class Mobile{
+    String type;
+    String phoneno;
+    Mobile(String type, String phoneno) throws InvalidPhoneNumberException
+    {
+        if(phoneno.length() != 10)
+        {
+            throw new InvalidPhoneNumberException("Invalid Phone number");
+            
+        }
+        this.type = type;
+        this.phoneno = phoneno;
+    }
+    void show()
+    {
+        System.out.println("Type is "+type);
+        System.out.println("Phone no: "+phoneno);
+    }
+}
+
+
+
+
 
 
 
