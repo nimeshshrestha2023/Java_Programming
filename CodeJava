@@ -1422,6 +1422,37 @@ class Mobile{
     }
 }
 
+// WAP to show string constructor.
+
+Code:
+
+class Main {
+    public static void main(String[] args) {
+        // 1. Empty String constructor
+        String s1 = new String();
+        System.out.println("Empty String: '" + s1 + "'");
+
+        // 2. String from another String
+        String s2 = new String("Hello World");
+        System.out.println("String from another string: " + s2);
+
+        // 3. String from character array
+        char[] charArray = { 'J', 'a', 'v', 'a' };
+        String s3 = new String(charArray);
+        System.out.println("String from char array: " + s3);
+
+        // 4. String from byte array
+        byte[] byteArray = { 65, 66, 67, 68 }; // ASCII values for A, B, C, D
+        String s4 = new String(byteArray);
+        System.out.println("String from byte array: " + s4);
+
+        // 5. String from part of char array
+        String s5 = new String(charArray, 1, 2); // "av"
+        System.out.println("String from part of char array: " + s5);
+    }
+}
+
+
 
 
 
