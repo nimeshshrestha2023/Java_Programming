@@ -1482,6 +1482,105 @@ class Main{
 
 
 
+/*Write a program that asks the user to enter numbers in an array of size ‘n’. Then displays
+only the numbers that are divisible by 2 and 3. */
+
+import java.util.Scanner;
+
+class Main{
+    public static void main(String[] args)
+    {
+        Scanner sc =new Scanner(System.in);
+        System.out.println("Enter the size of an array :");
+        int n = sc.nextInt();
+        int[] num = new int[n];
+        System.out.println("Enter "+n+" numbers: ");
+        for(int i=0;i<n;i++)
+        {
+            num[i] = sc.nextInt();
+        }
+        System.out.println("Numbers divisible by 2 and 3: ");
+        for(int i=0;i<n;i++)
+        {
+            if((num[i]%2==0) && (num[i]%3==0))
+            {
+                
+                System.out.print(num[i]+" ");
+            }
+        }
+    }
+}
+
+/*Write a program that asks the user to enter elements in a matrix of size m × n and then
+display the sum of elements. */
+
+import java.util.Scanner;
+
+class Main{
+    public static void main(String[] args)
+    {
+        Scanner sc =new Scanner(System.in);
+        System.out.println("Enter the row : ");
+        int m = sc.nextInt();
+        System.out.println("Enter the column: ");
+        int n = sc.nextInt();
+        int[][] arr = new int[m][n];
+        System.out.println("Enter the "+m+"x"+n+" size matrix elements:" );
+        int sum = 0;
+        for(int i=0;i<m;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                arr[i][j] = sc.nextInt();
+            
+            }
+        }
+        for(int i=0;i<m;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                sum += arr[i][j];
+            }
+        }
+        System.out.println("Sum of "+m+"x"+n+" array: "+sum);
+        }
+}
+
+ /*Create a class Number with three integer instance variables x, y and z. The class will have
+one constructor to initialize instance variables. The class also will contain method
+getMax() method that will return the largest number. Create a class NumberDemo with
+main method that will create an object of Number and will print the largest number. */
+ 
+ class Number{
+    int x ,y, z;
+    Number(int a, int b, int c)
+    {
+        x =a;
+        y=b;
+        z=c;
+    }
+    int getMax()
+    {
+        int max=x;
+        if(y > max)
+        {
+            max =  y;
+        }
+        if(z > max)
+        {
+            max = z;
+        }
+        return max;
+    }
+}
+public class Main{
+    public static void main(String[] args)
+    {
+        Number n = new Number(1,2,3);
+        System.out.println(n.getMax());
+    }
+}
+
 
 
 
