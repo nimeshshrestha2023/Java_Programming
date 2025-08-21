@@ -1581,6 +1581,56 @@ public class Main{
     }
 }
 
+// Program to demonstrate the String constructor.
+
+class Main{
+    public static void main(String[] args)
+    {
+        //1. Empty string constructor
+        String str1 = new String();
+        System.out.println("Empty constructor: "+str1);
+        
+        //2. String from another string
+        
+        String str2 = new String("Nimesh");
+        System.out.println("String from another string: "+str2);
+        
+        //3. String from character Array
+        char[] chararray = {'J','A','V','A'};
+        String str3 = new String(chararray);
+        System.out.println("String from character array: "+str3);
+        
+        //4. String from bytearray
+        byte[] bytearray = {65,66,67,68};
+        String str4 = new String(bytearray);
+        System.out.println("String from byte array: "+str4);
+        
+        //5. String from part of char array
+        
+        String str5 = new String(chararray,1,2);
+        System.out.println("String from part of chararray: "+str5);
+        
+        
+    }
+}
+
+
+// WAP to show the demo of concat()
+
+Code:
+
+class Main{
+    public static void main(String[] args)
+    {
+        String str1 = "Nimesh";
+        String str2 = "Shrestha";
+        
+        String str3 = str1.concat(str2);
+        System.out.println("Result: "+str3);
+    }
+}
+
+
 
 
 
