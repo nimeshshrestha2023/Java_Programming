@@ -1630,6 +1630,177 @@ class Main{
     }
 }
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+			   			LAB-1 CONTENTS
+
+
+
+
+PROGRAM TO DISPLAY THE TRUTH TABLE OF CONJUNCTION—--------------1
+
+PROGRAM TO DISPLAY THE TRUTH TABLE OF DISJUNCTION—--------------2
+
+PROGRAM TO DISPLAY THE TRUTH TABLE OF NEGATION—-----------------3
+
+PROGRAM TO DISPLAY THE TRUTH TABLE OF IMPLICATION—--------------4 
+
+PROGRAM TO DISPLAY THE TRUTH TABLE OF BI-CONDITIONAL—-----------5
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+WAP to print the truth table of Conjunction.
+
+Source code:
+
+class ConjunctionDemo {
+    public static int displayAND(int A, int B) {
+        if (A == 1 && B == 1) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+
+    public static void main(String[] args) {
+        int A, B, conjunction;
+        System.out.println("A B | A ^ B");
+        System.out.println("------------");
+        for (A = 0; A <= 1; A++) {
+            for (B = 0; B <= 1; B++) {
+                conjunction = displayAND(A, B);
+                System.out.println(A + " " + B + " |   " + conjunction);
+            }
+        }
+	System.out.print(“\nNimesh Shrestha | Roll: 14 | Sec: A\n”);
+    }
+}
+
+Output:
+
+
+WAP to display the truth table of Disjunction.
+
+Source Code:
+
+class DisjunctionDemo {
+    public static int displayOR(int A, int B) {
+        return (A==1 || B==1) ? 1 : 0;
+    }
+
+
+    public static void main(String[] args) {
+        int A, B, disjunction;
+        System.out.println("A B | A ∨ B");
+        System.out.println("------------");
+        for (A = 0; A <= 1; A++) {
+            for (B = 0; B <= 1; B++) {
+                disjunction = displayOR(A, B);
+                System.out.println(A + " " + B + " |   " + disjunction);
+            }
+        }
+        
+        System.out.print("\nNimesh Shrestha | Roll: 14 | Sec: A\n");
+    }
+}
+
+Output: 
+
+
+
+
+WAP to display the truth table of Negation.
+
+Source Code:
+
+class NegationDemo {
+    public static int displayNOT(int A) {
+        return (A==1) ? 0 : 1;
+    }
+
+
+    public static void main(String[] args) {
+        int A, Negation;
+        System.out.println("A |  ~A");
+        System.out.println("------------");
+        for (A = 0; A <= 1; A++) {
+                Negation = displayNOT(A);
+                System.out.println(A + "  |  " + Negation);
+            }
+        
+        System.out.print("\nNimesh Shrestha | Roll: 14 | Sec: A\n");
+    }
+}
+
+Output:
+
+
+
+
+
+
+
+WAP to display the truth table of Implication.
+
+Source Code:
+
+class ImplicationDemo {
+    public static int displayImplication(int A, int B) {
+        return (A==1 && B == 0) ? 0 : 1;
+    }
+
+
+    public static void main(String[] args) {
+        int A,B, implication;
+        System.out.println("A B | A → B");
+        System.out.println("------------");
+        for (A = 0; A <= 1; A++) {
+            for(B = 0; B <= 1; B++)
+            {
+                implication = displayImplication(A,B);
+                System.out.println(A + " " + B + "   " + implication);
+            }
+        }
+        System.out.print("\nNimesh Shrestha | Roll: 14 | Sec: A\n");
+    }
+}
+
+Output: 
+
+WAP to display the truth table of Bi-Conditional.
+
+Source Code:
+
+class BiConditionalDemo {
+    public static int displayBiConditional(int A, int B) {
+        return (A==B) ? 1 : 0;
+     }
+
+
+    public static void main(String[] args) {
+        int A,B, biconditional;
+        System.out.println("A B | A ↔ B");
+        System.out.println("------------");
+        for (A = 0; A <= 1; A++) {
+            for(B = 0; B <= 1; B++)
+            {
+                biconditional = displayBiConditional(A,B);
+                System.out.println(A + " " + B + "   " + biconditional);
+            }
+        }
+        System.out.print("\nNimesh Shrestha | Roll: 14 | Sec: A\n");
+    }
+}
+
+
+
+
+
+
+
 
 
 
