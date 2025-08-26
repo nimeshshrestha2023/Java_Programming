@@ -1796,6 +1796,84 @@ class BiConditionalDemo {
 }
 
 
+// WAP in java to create a new file and add contents there.
+
+Code:
+
+import java.io.*;
+
+class Main{
+    public static void main(String[] args) {
+
+        try{
+        File f1 = new File("C:\\Users\\n" + //
+                        "imes\\OneDrive\\Desktop\\Demo.txt");
+
+        if(f1.createNewFile())
+        {
+            System.out.println("File created successfullyy !!!");
+        } else{
+            System.out.println("Hhhhsss !, Error creating file");
+        }
+
+        FileWriter writer = new FileWriter(f1);
+        writer.write("Hello, I love Javaa !");
+   
+        writer.close();
+
+    
+    } catch(Exception e)
+    {
+        System.out.println(e);
+    }
+  }   
+ }
+
+- Program to print vowels and constants from the file:
+
+Code:
+
+import java.io.*;
+
+class Main{
+    public static void main(String[] args) {
+        try{
+            FileInputStream rd = new FileInputStream("C:\\Users\\n" + //
+                                "imes\\OneDrive\\Desktop\\Demo.txt");
+            
+            int v=0, c=0, sp = 0,i;
+            while ((i=rd.read())!= -1) {
+                char ch = (char)i;
+
+                if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+                {
+                    v++;
+                }
+                else{
+                    c++;
+                }
+
+                
+            }
+            rd.close();
+            System.out.println("Total vowel:  "+v);
+            System.out.println("Total constant: "+c);
+            
+
+
+        }catch(Exception e)
+        {
+            System.out.println(e);
+        }     
+       
+    }
+}
+
+
+
+
+
+
 
 
 
