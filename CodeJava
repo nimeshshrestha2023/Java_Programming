@@ -1869,6 +1869,43 @@ class Main{
     }
 }
 
+// Proram to demonstrate the example of Nested class:
+
+
+Code:
+class Main{
+    public static void main(String[] args) {
+        OuterClass outer = new OuterClass();
+        outer.hiThere();
+
+
+        OuterClass.InnerClass inner = outer.new InnerClass();
+        inner.HloThere();
+
+    }
+}
+
+public class OuterClass{
+
+    int outerNum = 10;
+    void hiThere()
+    {
+        System.out.println("Hi , from outerclass");
+    }
+
+
+class InnerClass{
+    int innerNum = 11;
+    void HloThere()
+    {
+        System.out.println("Hlo, there from innterclass");
+    }
+}
+}
+
+
+
+
 
 
 
