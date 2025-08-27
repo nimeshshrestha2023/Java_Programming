@@ -1904,6 +1904,105 @@ class InnerClass{
 }
 
 
+// Program to create new folder and files and add some student's name , age and roll : 
+
+import java.io.*;
+import java.util.Scanner;
+
+class Student {
+    String name;
+    int roll;
+    int age;
+
+    Student(String name, int roll, int age) {
+        this.name = name;
+        this.roll = roll;
+        this.age = age;
+    }
+
+    public String toString() {
+        return "Name: " + name + ", Roll: " + roll + ", Age: " + age;
+    }
+}
+
+class FileDemo {
+    public static void createFolder() {
+        File dir = new File("D:\\NimeshDir\\Crediential");
+
+        if (!dir.exists()) {
+            boolean folderCreated = dir.mkdirs();
+            if (folderCreated) {
+                System.out.println("Folder created successfully!");
+            } else {
+                System.out.println("Folder creation failed!");
+            }
+        } else {
+            System.out.println("Folder already exists.");
+        }
+    }
+
+    public static void createFile() {
+        Scanner sc = new Scanner(System.in);
+        try {
+            File f = new File("D:\\NimeshDir\\Crediential\\Data.txt");
+
+            if (!f.exists()) {
+                if (f.createNewFile()) {
+                    System.out.println("File created successfully!");
+                } else {
+                    System.out.println("File creation failed!");
+                }
+            } else {
+                System.out.println("File already exists. Data will be appended.");
+            }
+
+            System.out.print("How many students' details: ");
+            int limit = sc.nextInt();
+            sc.nextLine(); // clear newline
+
+            Student[] students = new Student[limit];
+
+            for (int i = 0; i < limit; i++) {
+                System.out.println("\nEnter details for student " + (i + 1));
+
+                System.out.print("Name: ");
+                String name = sc.nextLine();
+
+                System.out.print("Roll: ");
+                int roll = sc.nextInt();
+
+                System.out.print("Age: ");
+                int age = sc.nextInt();
+                sc.nextLine(); // clear newline
+
+                students[i] = new Student(name, roll, age);
+            }
+
+            // Write data to file (append mode)
+            FileWriter writer = new FileWriter(f, true);
+            BufferedWriter bw = new BufferedWriter(writer);
+
+            for (Student s : students) {
+                bw.write(s.toString());
+                bw.newLine();
+            }
+
+            bw.close();
+            writer.close();
+            System.out.println("Students' data added successfully!");
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+    }
+
+    public static void main(String[] args) {
+        createFolder();
+        createFile();
+    }
+}
+
+
 
 
 
