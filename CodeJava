@@ -2003,7 +2003,210 @@ class FileDemo {
 }
 
 
+/*Create a base class Complex with member variables real and imaginary. Also
+include the member method called display to print the value of complex number.
+Then create a child class complex1 with member variables real & imaginary and
+member method which adds its real with parents real and its imaginary with
+parent’s imaginary and returns the result as a complex type. Also include
+constructor that initializes its member variable values. Create an object of
+complex1 and call the add method on behalf of it to print the result. */
 
+Code:
+
+class Complex
+{
+int real,imaginary;
+Complex(int r,int i)
+{
+real=r;
+imaginary=i;
+}
+void display()
+{
+System.out.print("The value of Complex Number is: "+(real)+"+"+(imaginary)+"i");
+}
+}
+class Complex1 extends Complex
+{
+    int real2, imaginary2;
+Complex1(int r,int i,int r1,int i1)
+{
+super(r,i);
+real2=r1;
+imaginary2=i1;
+}
+public Complex add()
+{
+int totalreal=super.real+real2;
+int totalimaginary=super.imaginary+imaginary2;
+return new Complex(totalreal,totalimaginary);
+}
+}
+class Main
+{
+public static void main(String[] args)
+{
+Complex1 ob=new Complex1(3,4,5,6);
+Complex x=ob.add();
+x.display();
+}
+}
+
+/* Create an interface called Calculate which has methods int add (int x, int y) and
+int diff (int x, int y) to perform addition and subtraction of numbers passed as
+arguments. Then define a class that implements interface calculate.*/
+
+Code:
+
+interface Calculate{
+    int add(int x, int y);
+    int diff(int x, int y);
+}
+
+class cal implements Calculate{
+
+    public int add(int x, int y)
+    {
+        return x+y;
+    }
+
+    public int diff(int x, int y)
+    {
+        return x-y;
+    }
+}
+class ConjunctionDemo{
+    public static void main(String[] args) {
+        
+        Calculate ob = new cal();
+
+        System.out.println("Sum is "+ob.add(2,1)+" and the difference is "+ob.diff(5,2));
+
+    }
+}
+
+
+/*Create a class Student with instance variables roll no and two method to read
+and display the roll no. Then, create another class Test that inherits class
+Student, consisting of its own instance variables to hold the marks of two
+subjects and also methods to read and display the marks. Finally, create another
+class Result which inherits class Test. It also has its own instance variable total
+to hold off two marks scored by the student. Similarly, it has methods to calculate
+and display the total. Create some instances of above classes and demonstrate
+inheritance. */
+
+Code:
+
+class Student{
+
+    int rollno;
+
+    public void toReadRoll(int r)
+    {
+        rollno = r;
+    }
+
+    public void toDisplayRoll()
+    {
+        System.out.println("Roll: "+rollno);
+    }
+}
+
+
+class Test extends Student{
+    int mark1, mark2;
+
+    public void toReadMark(int m1, int m2)
+    {
+        mark1 = m1;
+        mark2 = m2;
+    }
+
+    public void toDisplayMarks()
+    {
+        System.out.println("Marks in English: "+mark1);
+        System.out.println("Marks in Java: "+mark2);
+
+    }
+}
+class Result extends Test{
+    int total;
+    public void toCalculate(int t)
+    {
+        total = t;
+    }
+    public void toDisplayTotal()
+    {
+        System.out.println("Total marks: "+total);
+    }
+}
+
+class ConjunctionDemo{
+    public static void main(String[] args) {
+        Result ob = new Result();
+
+        ob.toReadRoll(14);
+        ob.toDisplayRoll();
+
+        ob.toReadMark(89,99);
+        ob.toDisplayMarks();
+
+        int tot = ob.mark1 + ob.mark2;
+        ob.toCalculate(tot);
+        ob.toDisplayTotal();
+    }
+}
+
+
+
+/*Create an abstract class called Fmachine, having methods getdata() and
+putdata(). Derive a class Airplane, having instance variables code, name,
+capacity and methods getdata() and putdata() that overrides Fmachine’s
+getdata() and putdata() to read and display the result.*/
+
+import java.util.Scanner;
+
+abstract class Fmachine{
+    public abstract void getdata();
+    public abstract void putdata();
+}
+
+class Airplane extends Fmachine{
+    
+
+    String varCode, name;
+    int capacity;
+
+    public void getdata()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the variable code: ");
+        varCode = sc.nextLine();
+
+        System.out.println("Enter the name: ");
+        name = sc.nextLine();
+
+        System.out.println("Enter the capacity: ");
+        capacity = sc.nextInt();
+        sc.nextLine();
+    }
+
+    public void putdata()
+    {
+        System.out.println("variable code: "+varCode+" , Name: "+name+" and capacity is "+capacity);
+    }
+
+
+}
+
+class ConjunctionDemo{
+    public static void main(String[] args) {
+        Fmachine ob = new Airplane();
+
+        ob.getdata();
+        ob.putdata();
+    }
+}
 
 
 
