@@ -2280,6 +2280,41 @@ public class StringDemo {
 }
 
 
+// //Write a Java program to reverse a string without using the built-in reverse() method.
+// class Main{
+
+//     public static void main(String[] args) {
+        
+//         String str = "Nimesh";
+//         String reversed="";
+
+//         for(int i=str.length()-1; i>=0;i--)
+//         {
+//             reversed += str.charAt(i);
+
+//         }
+//         System.out.println("Original string: "+str);
+//         System.out.println("Reversed String: "+reversed);
+//     }
+// }
+
+// replace all the spaces with -
+
+class Main{
+    public static void main(String[] args) {
+        
+        String str = new String("Hello, my name is nimesh");
+
+        if(str.contains(" "))
+        {
+           str = str.replace(" ","-");
+           System.out.println(str);
+        }
+
+
+    }
+}
+
 
 
 
