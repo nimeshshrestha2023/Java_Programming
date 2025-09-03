@@ -2315,6 +2315,40 @@ class Main{
     }
 }
 
+// Program to check whether the String is palindrome or not and check until the user is satisfied.
+
+Code:
+
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int choice;
+
+        do {
+            System.out.println("Enter the string: ");
+            String str = sc.nextLine();
+
+            String reversed = ""; // Reset each time
+            for (int i = str.length() - 1; i >= 0; i--) {
+                reversed += str.charAt(i);
+            }
+
+            if (str.equals(reversed)) {
+                System.out.println("Palindrome");
+            } else {
+                System.out.println("Not");
+            }
+
+            System.out.println("Want to continue? Press 1 to continue: ");
+            choice = Integer.valueOf(sc.nextLine());
+            // sc.nextLine(); // Consume leftover newline
+        } while (choice == 1);
+    }
+}
+
+
 
 
 
