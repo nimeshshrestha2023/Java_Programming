@@ -2348,6 +2348,121 @@ class Main {
     }
 }
 
+/*Program to create folder and file and add some records and display the name in alphatetical order. (VVI)*/
+
+import java.util.Scanner;
+import java.io.*;
+
+class Student{
+    String name;
+
+    void setname(String name)
+    {
+        this.name = name;
+    }
+
+}
+
+class Main{
+    public static void createDir()
+    {
+        File dir = new File("D:\\NimeshDir\\Credientials");
+        if(!dir.exists())
+       {
+        boolean createdFolder = dir.mkdirs();
+
+        if(createdFolder)
+        {
+            System.out.println("Folder creation success: ");
+        }else{
+            System.out.println("Folder creation failed: ");
+        }
+       }else{
+        System.out.println("Folder exists: ");
+       }
+
+   }
+
+   public static void createFile()
+   {
+    Scanner sc =new Scanner(System.in);
+    File f = new File("D:\\NimeshDir\\Credientials\\Data.txt");
+    try{
+        if(!f.exists())
+     {
+        if(f.createNewFile())
+        {
+            System.out.println("File creation success: ");
+        }
+        else{
+            System.out.println("File creation failed: ");
+        }
+    }else{
+        System.out.println("File exists: Data will be overwritten");
+    }
+
+    System.out.println("How many students: ");
+    int limit = sc.nextInt();
+    sc.nextLine();
+
+    Student[] std = new Student[limit];
+
+    for(int i=0;i<limit;i++)
+    {
+        System.out.printf("Student no:%d\n",(i+1));
+        System.out.println("Student's name: ");
+        String name = sc.nextLine();
+
+        std[i] = new Student();
+        std[i].setname(name);
+    }
+     for(int i=0;i<limit;i++)
+    {
+        for(int j=i+1;j<limit;j++)
+        {
+            if(std[i].name.compareTo(std[j].name)>0)
+            {
+                Student temp = std[i];
+                std[i] = std[j];
+                std[j] = temp;
+            }
+        }
+    }
+
+    BufferedWriter bw = new BufferedWriter(new FileWriter(f));
+    for(Student s: std)
+    {
+        bw.write("Name: "+s.name);
+        bw.newLine();
+    }
+    bw.close();
+    System.out.println("Data stored success: ");
+
+    BufferedReader br = new BufferedReader(new FileReader(f));
+
+    String line;
+    while((line=br.readLine())!= null)
+    {
+        
+    System.out.println(line);
+    }
+
+
+
+}catch(Exception e)
+{
+    System.out.println(e);
+   }  
+}
+public static void main(String[] args)
+{
+    createDir();
+    createFile();
+}
+
+
+}
+
 
 
 
