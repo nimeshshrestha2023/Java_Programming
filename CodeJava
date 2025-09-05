@@ -2463,6 +2463,112 @@ public static void main(String[] args)
 
 }
 
+/*Program to create folder and file and add some records and display the roll in ascending order. (VVI)*/
+
+import java.util.Scanner;
+import java.io.*;
+
+class Student{
+    int roll;
+
+    void setDetails(int roll)
+    {
+        this.roll = roll;
+    }
+}
+class Main{
+    public static void createDir()
+    {
+        File dir = new File("D:\\NimeshDir\\Credientials");
+        if(!dir.exists())
+        {
+            boolean createdFolder = dir.mkdirs();
+            if(createdFolder)
+            {
+                System.out.println("Folder creation success: ");
+            }
+            else{
+                System.out.println("Folder creation failed: ");
+            }
+        }else{
+            System.out.println("Folder already exists: ");
+        }
+    }
+
+    public static void createFile()
+    {
+        Scanner sc =new Scanner(System.in);
+        File f = new File("D:\\NimeshDir\\Credientials\\Hero.txt");
+        try{
+            if(!f.exists())
+            {
+                if(f.createNewFile())
+                {
+                    System.out.println("File creation success: ");
+                }
+                else{
+                    System.out.println("File creation failed: ");
+                }
+            }else{
+                System.out.println("File already exists: Data will be overwritten");
+            }
+
+            System.out.println("How many student's roll: ");
+            int limit = Integer.valueOf(sc.nextLine());
+
+            Student[] std = new Student[limit];
+            for(int i=0;i<limit;i++)
+            {
+                System.out.println("Student no: "+(i+1));
+                System.out.println("Student's roll: ");
+                int roll = Integer.valueOf(sc.nextLine());
+
+                std[i] = new Student();
+                std[i].setDetails(roll);
+            }
+
+            for(int i=0;i<limit;i++)
+            {
+                for(int j=i+1;j<limit;j++)
+                {
+                    if(std[i].roll > std[j].roll)
+                    {
+                        Student temp = std[i];
+                        std[i] = std[j];
+                        std[j] = temp;
+                    }
+                }
+            }
+
+        BufferedWriter bw = new BufferedWriter(new FileWriter(f));
+        for(Student s : std)
+        {
+            bw.write(String.valueOf(s.roll));
+            bw.newLine();
+        }
+        bw.close();
+
+        BufferedReader br = new BufferedReader(new FileReader(f));
+        String line;
+
+        while((line = br.readLine())!=null)
+        {
+            System.out.println(line);
+        }
+        br.close();
+
+        }catch(Exception e)
+        {
+            System.out.println("Error: "+e);
+        }
+    }
+    public static void main(String[] args)
+    {
+        createDir();
+        createFile();
+    }
+}
+
 
 
 
