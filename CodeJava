@@ -2569,7 +2569,7 @@ class Main{
     }
 }
 
-
+// Renaming the file
 import java.util.Scanner;
 
 import java.io.*;
@@ -2611,6 +2611,72 @@ class Main{
 }
 
 }
+
+/*Create a class named college with instance variables cname and crank. Add a method named
+setCollege with parameters name and rank. Add another method named showRecord to display
+values of these variables. Now derive a class named student with member variables name and
+roll. Also add two methods setStudent and displayRecord to set parameters and to display records
+respectively in student. Now in main (), declare 4 objects of student and display the records of
+student whose name ends with “ra”.*/
+import java.util.Scanner;
+class collage{
+    String cname;
+    int crank;
+
+    void setCollage(String cname, int crank)
+    {
+        this.cname = cname;
+        this.crank = crank;
+    }
+
+    void showRecord()
+    {
+        System.out.println("CName: "+cname+" and Crank: "+crank);
+    }
+}
+
+class student extends collage{
+    String name;
+    int roll;
+    void setStudent(String name, int roll)
+    {
+        this.name = name;
+        this.roll = roll;
+    }
+
+    void displayRecord()
+    {
+        System.out.println("Name: "+name+" and Roll: "+roll);
+    }
+}
+class Main{
+    public static void main(String[] args) {
+
+        Scanner sc =new Scanner(System.in);
+        student[] std = new student[4];
+        for(int i=0;i<4;i++)
+        {
+        System.out.println("Enter the name: ");
+        String name = sc.nextLine();
+        System.out.println("Enter the roll: ");
+        int roll = Integer.valueOf(sc.nextLine());
+
+        std[i] = new student();
+        std[i].setStudent(name,roll);
+    }
+
+        for(student s: std)
+        {
+           
+            
+            if(s.name.endsWith("ra"))
+            {
+                s.displayRecord();
+            }
+        }
+    }
+}
+
 
 
 
