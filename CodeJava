@@ -2570,6 +2570,48 @@ class Main{
 }
 
 
+import java.util.Scanner;
+
+import java.io.*;
+
+class Main{
+    public static void main(String[] args) {
+        // try{
+        
+        File f = new File("C:\\Users\\nimes\\OneDrive\\Desktop\\Nimesh.txt");
+        File n = new File("C:\\Users\\nimes\\OneDrive\\Desktop\\Nimeshhhh.txt");
+
+    //     String str = "I love Java Programming : ";
+
+    //     FileWriter writer = new FileWriter(f);
+    //     writer.write(str);
+    //     System.out.println("File written success: ");
+    //     writer.close();
+
+    //     BufferedReader bf = new BufferedReader(new FileReader(f));
+    //     String line;
+    //     while((line = bf.readLine())!= null)
+    //     {
+    //         System.out.print(line);
+    //     }
+
+
+    // }catch(Exception e)
+    // {
+    //     System.out.println(e);
+    // }
+        if(f.exists())
+        {
+            System.out.println(f.renameTo(n));
+        }
+        else{
+            System.out.println("File not exists: ");
+        }
+
+}
+
+}
+
 
 
 
