@@ -2678,6 +2678,119 @@ class Main{
 }
 
 
+/*2. Program to enter the names of 'n' students and sort them in alphabetical order. 
+ */
+
+ import java.util.Scanner;
+
+
+import java.io.*;
+
+ class Student{
+    String name;
+    Student(String name)
+    {
+        this.name = name;
+    }
+ }
+
+ class Main{
+
+    public static void createFolder()
+    {
+        File dir = new File("D:\\NimeshDir\\Credientials");
+        if(!dir.exists())
+        {
+            boolean createdFolder = dir.mkdirs();
+            if(createdFolder)
+            {
+                System.out.println("Folder creation success: ");
+            }else{
+                System.out.println("Folder creation failed: ");
+            }
+        }else{
+            System.out.println("Folder already exists: ");
+        }
+    }
+
+    public static void createFile()
+    {
+        File f = new File("D:\\NimeshDir\\Credientials\\sort.txt");
+        Scanner sc =new Scanner(System.in);
+
+        try{
+        if(!f.exists())
+        {
+            if(f.createNewFile())
+            {
+                System.out.println("File creation success: ");
+            }else{
+                System.out.println("File creation  failed: ");
+            }
+        }else{
+            System.out.println("File already exists: Data will be overwritten");
+        }
+
+        System.out.println("How many student's name: ");
+        int limit = Integer.valueOf(sc.nextLine());
+
+        Student[] std = new Student[limit];
+        System.out.println("Enter "+limit+" student's name: ");
+        for(int i=0;i<limit;i++)
+        {
+            System.out.println("Student no: "+(i+1));
+            System.out.println("Name: ");
+            String name = sc.nextLine();
+
+            std[i] = new Student(name);
+        }
+
+        for(int i=0;i<limit;i++)
+        {
+            for(int j=i+1;j<limit;j++)
+            {
+                if(std[i].name.compareTo(std[j].name)>0)
+                {
+                    Student temp = std[i];
+                    std[i] = std[j];
+                    std[j] = temp;
+                }
+            }
+        }
+
+        BufferedWriter bw = new BufferedWriter(new FileWriter(f));
+        for(Student s : std)
+        {
+            bw.write(s.name);
+            bw.newLine();
+        }
+        bw.close();
+        System.out.println("Message stored into the file success: ");
+
+        BufferedReader br = new BufferedReader(new FileReader(f));
+        String line;
+
+        while((line = br.readLine())!= null)
+        {
+            System.out.println(line);
+        }
+        br.close();
+        System.out.println("Message retrived from the file: ");
+
+    }catch(Exception e)
+    {
+        System.out.println("Error: "+e);
+    }
+
+    }
+    public static void main(String[] args) {
+
+        createFolder();
+        createFile();
+    
+    }
+ }
+
 
 
 
