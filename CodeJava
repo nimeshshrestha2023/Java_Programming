@@ -2792,6 +2792,175 @@ import java.io.*;
  }
 
 
+public class Main{
+    public static void main(String[] args)
+    {
+        sLinkedList list = new sLinkedList();
+        
+        list.addToHead(5);
+          list.addToHead(55);
+            list.addToHead(105);
+            
+            list.addToTail(1);
+            
+            list.deleteHead();
+            list.deleteTail();
+            
+            list.addanyPosition(14,1);
+            
+            System.out.println(list.search(5));
+          
+            
+            list.display();
+    }
+}
+
+class Node{
+    int data;
+    Node next;
+    
+    public Node(int val)
+    {
+        data = val;
+        next = null;
+    }
+}
+class sLinkedList{
+    
+    Node head;
+    Node tail;
+    public sLinkedList()
+    {
+        head = null;
+    }
+    
+    // add to head
+    public void addToHead(int val)
+    {
+        Node newNode = new Node(val);
+        if(head == null)
+        {
+            head = tail = newNode;
+        }else{
+            newNode.next = head;
+            head = newNode;
+            
+        }
+    }
+    
+    // add to tail
+    public void addToTail(int val)
+    {
+        Node newNode = new Node(val);
+        if(head == null)
+        {
+            head = tail = newNode;
+        }else{
+            tail.next = newNode;
+            tail = newNode;
+        }
+    }
+    
+    // delete head
+    
+    public void deleteHead()
+    {
+        if(head == null)
+        {
+            System.out.print("Empty nodes cannot be deleted: ");
+            return;
+            
+        }
+        Node temp = head;
+        head = head.next;
+        if(head != null)
+        {
+            temp.next = null;
+        }
+    }
+    
+    // delete tail
+    
+    public void deleteTail()
+    {
+        if(head == null)
+        {
+            System.out.println("Empty nodes cannot be deleted: ");
+            return;
+        }
+        
+        Node temp = head;
+        while(temp.next != tail)
+        {
+            temp = temp.next;
+        }
+        temp.next = null;
+        tail = temp;
+    }
+    
+    // add any position
+    
+    public void addanyPosition(int data, int pos)
+    {
+        if(pos < 0)
+        {
+            return;
+        }else if(pos == 0)
+        {
+            addToHead(100);
+        }else
+        {
+            Node temp = head;
+          
+            for(int i=1;i<pos-1;i++)
+            {
+                if(temp == null)
+                {
+                    System.out.println("Invalid position: ");
+                    return;
+                }
+                temp = temp.next;
+                
+            }
+              Node newNode = new Node(data);
+            newNode.next =  temp.next;
+                temp.next = newNode;
+        }
+    }
+    
+    // searching 
+    public int search(int key)
+    {
+        Node temp  = head;
+        int idx = 0;
+        while(temp != null)
+        {
+            if(temp.data == key)
+            {
+                return idx;
+            }
+            temp = temp.next;
+            idx++;
+ 
+        }
+        return -1;
+    }
+    
+    // displaying 
+    public void display()
+    {
+        Node temp = head;
+        while(temp != null) // also while(temp.next.next != null)
+        {
+            System.out.print(temp.data+"<--->");
+            temp = temp.next;
+        }
+      System.out.println("null");
+    }
+}
+
+
+
 
 
 
